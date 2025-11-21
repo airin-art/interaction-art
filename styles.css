@@ -1,0 +1,1058 @@
+/* Базовые стили */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #111111;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+}
+
+/* Шапка и меню */
+
+.main-header {
+    padding: 24px 16px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.main-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.main-logo {
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.main-nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.main-nav-link-active {
+    border-bottom-color: #000000;
+}
+
+/* Заголовки */
+
+.page-title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 48px 0 8px;
+    letter-spacing: 0.08em;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #555555;
+}
+
+/* Первый экран */
+
+.hero-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero-label {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Логотип под надписью "Спирино" */
+
+.hero-logo {
+    margin: 8px auto 8px;
+}
+
+.hero-logo img {
+    height: 220px;
+    max-width: 260px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Заголовок в две строки */
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+}
+
+.hero-title-line {
+    display: block;
+}
+
+/* Блок "О резиденции" */
+
+.about-section {
+    max-width: 900px;
+    margin: 0 auto 64px;
+    font-size: 16px;
+}
+
+.about-section h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.about-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.about-section p {
+    margin-bottom: 12px;
+}
+
+.about-section ul {
+    margin: 0 0 12px 18px;
+    padding: 0;
+}
+
+.about-section li {
+    margin-bottom: 6px;
+}
+
+/* Три направления на главной */
+
+.directions-section {
+    margin-top: 32px;
+    margin-bottom: 72px;
+}
+
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+}
+
+.direction-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Обёртка для фото: скругление со всех сторон */
+.direction-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+/* Фото заполняет обёртку */
+.direction-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Кнопки под фото на главной */
+
+.direction-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 32px;
+    border-radius: 999px;
+    background-color: #234f9b;        /* синий из логотипа */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.direction-button:hover {
+    background-color: #234f9b;        /* чуть темнее при наведении */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Кнопка "Подать заявку" на странице резиденции */
+
+.apply-button {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 999px;
+    background-color: #234f9b;        /* тот же синий */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+.about-cta-button-wrapper {
+    margin-top: 1.5rem; /* чтобы кнопка чуть отступала от текста */
+ text-align: center;
+}
+
+.apply-button:hover {
+    background-color: #234f9b;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Лёгкая тень при наведении */
+.direction-button:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Карточки резиденций и выставок */
+
+.items-section {
+    margin-top: 32px;
+}
+
+.items-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+}
+
+
+.item-card {
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+}
+
+.item-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.item-meta {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 12px;
+}
+.item-meta-upcoming {
+    color: #4d8fe9;      /* тот же синий, что у кнопок */
+    font-weight: 600;
+}
+
+
+.item-description {
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.item-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #4d8fe9;
+}
+/* --- Синие кликабельные карточки только на странице "Резиденции" --- */
+
+.residencies-list .item-card {
+    padding: 0; /* отступы будут у ссылки внутри */
+    border-radius: 16px;
+    border: none;
+    background-color: #234f9b; /* синий под цвет кнопок */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    overflow: hidden;
+}
+
+.residencies-list .item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* делаем кликабельной ВСЮ карточку */
+.residencies-list .item-card-link {
+    display: block;
+    padding: 24px;
+    height: 100%;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* заголовок в синих карточках */
+.residencies-list .item-title {
+    margin-bottom: 8px;
+}
+
+/* подпись/даты в синих карточках */
+.residencies-list .item-meta {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* Участники */
+
+/* Участники — общий блок */
+.participants-section {
+    margin-top: 72px;
+    margin-bottom: 96px;
+}
+
+/* Один заезд (Сентябрь 2025, Май 2025 и т.п.) */
+.participants-block {
+    margin-bottom: 96px;
+}
+
+/* Заголовок заезда */
+.participants-block h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2.2rem;
+}
+
+/* Сетка карточек */
+.participants-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 56px;   /* вертикальный и горизонтальный зазор между карточками */
+}
+
+/* Одна карточка участника */
+.participant-card {
+    max-width: 280px;
+    text-align: center;
+}
+
+/* Фото в кружке */
+.participant-photo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 0.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.participant-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Имя */
+.participant-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+/* Био */
+.participant-cv {
+    margin: 0 auto;
+    max-width: 320px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444444;
+}
+
+/* Город / роль */
+.participant-city {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #777777;
+}
+
+
+.participant-photo-wrapper {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Аккуратное кадрирование фото */
+.participant-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.participant-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.participant-city {
+    font-size: 14px;
+    color: #777777;
+    margin-top: 8px;
+}
+
+/* Текст CV показываем только при наведении на имя */
+.participant-cv {
+    display: block;          /* ВАЖНО: не none */
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444444;
+}
+
+
+
+
+/* Отзывы и контакты */
+
+
+.testimonials-section {
+    background-color: #f7f7fb;
+    padding: 56px 16px;
+    margin-top: 72px;
+}
+
+.testimonials-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    border-radius: 16px;
+    border: 1px solid #d8d8ff;
+    padding: 32px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+}
+
+.contacts-section {
+    padding-top: 56px;
+
+}
+
+
+.contacts-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.contacts-row {
+    margin-bottom: 8px;
+}
+.contacts-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Маленький цветной квадратик-значок для инстаграма */
+.instagram-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0, #ffffff 3px, transparent 4px),
+                linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+
+/* Футер */
+
+.main-footer {
+    margin-top: 48px;
+    padding: 24px 16px;
+    border-top: 1px solid #eeeeee;
+    font-size: 13px;
+    color: #777777;
+}
+
+.main-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Адаптив */
+/* Галерея на странице резиденции */
+
+.residency-gallery {
+    margin-top: 32px;
+}
+
+.residency-gallery-main {
+    max-width: 900px;
+    margin: 0 auto 16px;
+    /* фиксируем "рамку" по высоте, чтобы ничего не прыгало */
+    aspect-ratio: 4 / 3;           /* можно 3/2 или 1/1, если больше нравится */
+    background-color: #f3f3f3;     /* светлый фон вокруг работы */
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.residency-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;           /* картинка целиком влезает, не обрезается */
+    display: block;
+}
+
+
+/* Лента миниатюр снизу */
+.residency-gallery-thumbs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.gallery-thumb-button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.gallery-thumb-button img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* При наведении миниатюра становится ярче и чуть "подскакивает" */
+.gallery-thumb-button:hover img,
+.gallery-thumb-button:focus img {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Текст проекта немного сжат по ширине */
+.project-text {
+    max-width: 900px;
+    margin: 24px auto 0;
+}
+
+@media (max-width: 900px) {
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .about-section {
+        padding: 0 4px;
+    }
+
+    .directions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* на телефонах и планшетах резиденции тоже в один столбец */
+    .items-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 36px;
+    }
+}
+.participant-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 0.75rem;
+}
+.participants-section h2 {
+    text-align: center;
+}
+/* Организатор: по умолчанию текст скрыт */
+.participant-card-organizer .participant-bio {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+
+/* Текст-био: по умолчанию скрыт */
+.participant-bio {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
+/* Показывать био ТОЛЬКО когда курсор на имени */
+    display: block;
+}
+/* --- Выставки --- */
+
+.exhibitions-section {
+    margin-top: 3rem;
+}
+
+.exhibitions-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.exhibition-card {
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+}
+
+.exhibition-poster-link {
+    display: block;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* картинка тянется по ширине блока, высота считается сама — без обрезки */
+.exhibition-poster-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.exhibition-poster-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.exhibition-card-title {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.exhibition-card-dates {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.exhibition-detail {
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+/* строка с афишей и датами */
+.exhibition-header-row {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap; /* чтобы на маленьком экране картинка ушла наверх, текст вниз */
+}
+
+.exhibition-hero {
+    margin: 0;
+    flex: 0 0 280px; /* ширина блока с афишей ~280px */
+}
+
+.exhibition-hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+    display: block;
+}
+
+.exhibition-meta {
+    flex: 1;
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.exhibition-meta p {
+    margin: 0.3rem 0;
+}
+
+.exhibition-text p {
+    margin-bottom: 1rem;
+}
+
+.exhibition-themes h2,
+.exhibition-participants h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.exhibition-themes ul,
+.exhibition-participants ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.exhibition-themes li,
+.exhibition-participants li {
+    margin-bottom: 0.5rem;
+}
+
+.exhibition-participants h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.exhibition-themes ul,
+.exhibition-participants ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.exhibition-themes li,
+.exhibition-participants li {
+    margin-bottom: 0.5rem;
+}
+/* Заголовок и подзаголовок справа от афиши */
+.exhibition-title-inline {
+    text-align: left;
+    margin-bottom: 0.4rem;
+}
+
+.exhibition-subtitle-inline {
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+/* --- Фотографии выставки --- */
+
+.exhibition-photos {
+    margin-top: 3rem;
+}
+
+.exhibition-photos h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.exhibition-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.exhibition-photo-item {
+    margin: 0;
+}
+
+.exhibition-photo-item img {
+    display: block;
+    width: 100%;
+    height: 240px;           /* чтобы сетка была ровная */
+    object-fit: cover;       /* аккуратно обрезает по краям, без вытягивания */
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exhibition-photo-item img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+/* --- Фотографии выставки --- */
+
+.exhibition-photos {
+    margin-top: 3rem;
+}
+
+.exhibition-photos h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.exhibition-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.exhibition-photo-item {
+    margin: 0;
+}
+
+.exhibition-photo-item img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exhibition-photo-item img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Скрытые фото (скрипт будет добавлять этот класс) */
+.exhibition-photo-item.is-hidden {
+    display: none;
+}
+
+/* Кнопка "Показать ещё" */
+.exhibition-photos-more-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.exhibition-photos-more-button {
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    background-color: #234f9b;
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.exhibition-photos-more-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    background-color: #1b3e7a;
+}
+.exhibition-photo-item.is-hidden {
+    display: none;
+}
+/* --- Хедер: логотип слева, название справа --- */
+
+.hero-section {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.hero-location {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-logo-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap; /* чтобы на маленьком экране становились в колонку */
+}
+
+.hero-logo-wrapper {
+    flex: 0 0 auto;
+}
+
+.hero-logo-image {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+}
+
+.hero-title-wrapper {
+    flex: 0 1 520px;
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* немного вытягиваем буквы по вертикали */
+.hero-title-stretched {
+    display: inline-block;
+    transform: scaleY(1.12);      /* можно поиграть цифрой: 1.05–1.12 */
+    transform-origin: center;
+}
+/* --- Двухколоночный блок на главной: текст слева, фото справа --- */
+
+.about-section-two-column {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.about-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+/* Левая колонка с текстом */
+.about-text-column {
+    flex: 1 1 55%;
+}
+
+/* Правая колонка с фотографиями */
+.about-photo-column {
+    flex: 0 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 6rem; /* чем больше число — тем ниже вся колонка */
+}
+
+.about-photo {
+    margin: 0;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+/* Больше воздуха между фотографиями в колонке */
+.about-photo-column figure + figure {
+    margin-top: 1.5rem;   /* можешь поиграть: 1.5rem, 2rem и т.д. */
+}
+
+
+.about-photo-main img {
+    height: 260px;
+}
+
+/* Адаптив: на телефоне всё станет в колонку */
+@media (max-width: 900px) {
+    .about-layout {
+        flex-direction: column;
+    }
+
+    .about-text-column,
+    .about-photo-column {
+        flex: 1 1 auto;
+    }
+
+    /* Можно показывать сначала фото, потом текст — если захочешь */
+    /* .about-photo-column { order: -1; } */
+}
+@media (max-width: 768px) {
+    .about-photo-column {
+        margin-top: 1.5rem; /* на телефонах колонка ближе к тексту */
+    }
+}
+:root {
+    --brand-blue: #234f9b;       /* синий из логотипа */
+    --brand-blue-dark: #1b3e7a;  /* чуть темнее для hover */
+}
+/* Цвет текста в шапке */
+
+.main-header {
+    background-color: #ffffff; /* на всякий случай вернём белый фон */
+}
+
+.main-logo {
+    color: #234f9b;
+}
+
+.main-nav a {
+    color: #234f9b;
+}
+
+/* Активный пункт меню можно чуть выделить */
+
+.main-nav a.main-nav-link-active {
+    font-weight: 600;
+    border-bottom: 2px solid #234f9b;
+    padding-bottom: 2px;
+}
+/* Ссылки "Контакты" и "Вернуться" в фирменном цвете */
+
+.main-footer a,
+.item-link {
+    color: #234f9b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.main-footer a:hover,
+.item-link:hover {
+    text-decoration: underline;
+}
+
+
