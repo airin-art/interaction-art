@@ -108,7 +108,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Заявка на резиденцию
+                Заявка на участие в резиденции
             </a>
         </div>
         </div> <!-- конец .about-text -->
@@ -169,17 +169,79 @@
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ И КОНТАКТЫ -->
-    <section class="testimonials-section">
-        <div class="testimonials-inner">
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    «В Спирино время течёт иначе: тишина, поле и дом становятся частью процесса, а не фоном.
-                    Здесь можно переключиться с выживания на чувствование.»
+   <!-- ОТЗЫВЫ И КОНТАКТЫ -->
+<section class="testimonials-section">
+    <div class="testimonials-inner">
+        <h2 class="page-subtitle">Отзывы</h2>
+
+        <div class="testimonials-slider" data-testimonials-slider>
+            <button
+                class="testimonials-arrow testimonials-arrow-left"
+                type="button"
+                aria-label="Предыдущий отзыв"
+                data-testimonials-prev
+            >
+                &#8592;
+            </button>
+
+            <div class="testimonials-slider-window">
+                <div class="testimonials-slider-track" data-testimonials-track>
+                    <article class="testimonial-card">
+                        <div class="testimonial-text">
+                            «В резиденции «Взаимодействие» я была уже три раза, каждый раз она становится для меня пространством полного погружения в творчество. Здесь есть редкая возможность посвятить всё своё время искусству: переключиться, отстраниться от привычного ритма, быть рядом с единомышленниками или, наоборот, погрузиться в тишину и побыть наедине с собой.
+
+В этой принимающей атмосфере я чувствовала себя спокойно и свободно. Появлялись новые мысли, желание экспериментировать и работать с новыми материалами. Резиденция дала мне шанс выйти из зоны комфорта и познакомиться с художниками из разных уголков страны — это вдохновляет и расширяет горизонты.»
+                        </div>
+                        <div class="testimonial-author">Карина Нуриева</div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-text">
+                            «Пространство очень продуманное и комфортное: каждый участник находит своё место — в доме или на улице, среди сосен и чистого воздуха. Дом стоит рядом с лесом, недалеко течёт Обь, и это невероятно живописное окружение становится важной частью опыта. Отдельно хочу отметить атмосферу внутри группы: бережное, тёплое общение, взаимная поддержка, уважение к процессу каждого. Часто приезжают приглашённые специалисты — психолог или фотограф, что добавляет глубины и помогает сохранить память о прожитом.»
+                        </div>
+                        <div class="testimonial-author">Карина Нуриева</div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-text">
+                            «Эта резиденция про свободу, принятие, поддержку и тонкую заботу. Я порекомендовала бы её художникам, кураторам, фотографам и всем творческим людям, которым важно вдохновение, природа и пространство для роста. Я благодарна Ире за возможность творить в компании единомышленников и за то волшебство, которое она создаёт каждый раз.»
+                        </div>
+                        <div class="testimonial-author">Карина Нуриева</div>
+                    </article>
                 </div>
-                <div class="testimonial-author">— из отзывов резиденток</div>
             </div>
+
+            <button
+                class="testimonials-arrow testimonials-arrow-right"
+                type="button"
+                aria-label="Следующий отзыв"
+                data-testimonials-next
+            >
+                &#8594;
+            </button>
         </div>
+
+        <div class="testimonials-dots" data-testimonials-dots></div>
+    </div>
+
+    <section id="contacts" class="contacts-section">
+        <div class="contacts-content">
+            <h2 class="page-subtitle">Контакты</h2>
+            <p class="contacts-row">Куратор: Ирина Анохина</p>
+            <p class="contacts-row">
+                E-mail:
+                <a href="mailto:irina.anokhina.art@gmail.com">irina.anokhina.art@gmail.com</a>
+            </p>
+            <p class="contacts-row contacts-instagram">
+                <span class="instagram-icon" aria-hidden="true"></span>
+                <a href="https://instagram.com/irina_anokhina_art" target="_blank">@irina_anokhina_art</a>
+            </p>
+            <p class="contacts-row" style="font-size: 12px; color: #999999;">
+                *Соцсеть, деятельность которой может быть признана экстремистской на территории РФ.
+            </p>
+        </div>
+    </section>
+</section>
 
         <section id="contacts" class="contacts-section">
     <div class="contacts-content">
@@ -208,6 +270,72 @@
         <div><a href="#contacts">Контакты</a></div>
     </div>
 </footer>
+<script>
+    (function () {
+        const testimonialsSlider = document.querySelector("[data-testimonials-slider]");
+
+        if (!testimonialsSlider) {
+            return;
+        }
+
+        const testimonialsTrack = testimonialsSlider.querySelector("[data-testimonials-track]");
+        const previousButton = testimonialsSlider.querySelector("[data-testimonials-prev]");
+        const nextButton = testimonialsSlider.querySelector("[data-testimonials-next]");
+        const dotsContainer = document.querySelector("[data-testimonials-dots]");
+        const testimonialCards = Array.from(testimonialsTrack.querySelectorAll(".testimonial-card"));
+
+        let activeSlideIndex = 0;
+
+        function renderDots() {
+            dotsContainer.innerHTML = "";
+
+            testimonialCards.forEach(function (_, index) {
+                const dotButton = document.createElement("button");
+                dotButton.type = "button";
+                dotButton.className = "testimonials-dot";
+                dotButton.setAttribute("aria-label", "Перейти к отзыву " + (index + 1));
+
+                if (index === activeSlideIndex) {
+                    dotButton.classList.add("testimonials-dot-active");
+                }
+
+                dotButton.addEventListener("click", function () {
+                    activeSlideIndex = index;
+                    updateSliderPosition();
+                });
+
+                dotsContainer.appendChild(dotButton);
+            });
+        }
+
+        function updateSliderPosition() {
+            testimonialsTrack.style.transform = "translateX(-" + (activeSlideIndex * 100) + "%)";
+            renderDots();
+        }
+
+        previousButton.addEventListener("click", function () {
+            activeSlideIndex = activeSlideIndex - 1;
+
+            if (activeSlideIndex < 0) {
+                activeSlideIndex = testimonialCards.length - 1;
+            }
+
+            updateSliderPosition();
+        });
+
+        nextButton.addEventListener("click", function () {
+            activeSlideIndex = activeSlideIndex + 1;
+
+            if (activeSlideIndex >= testimonialCards.length) {
+                activeSlideIndex = 0;
+            }
+
+            updateSliderPosition();
+        });
+
+        updateSliderPosition();
+    })();
+</script>
 </body>
 </html>
 

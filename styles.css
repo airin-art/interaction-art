@@ -1042,6 +1042,7 @@ img {
 }
 /* Ссылки "Контакты" и "Вернуться" в фирменном цвете */
 
+
 .main-footer a,
 .item-link {
     color: #234f9b;
@@ -1055,4 +1056,129 @@ img {
     text-decoration: underline;
 }
 
+.email-link {
+    color: #234f9b;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: inherit;
+    font-weight: 500;
+}
 
+.email-link:hover {
+    text-decoration: underline;
+}
+.participant-photo-wrapper img.participant-photo-lower {
+    object-position: center 35%;
+}
+.testimonials-section {
+    padding: 80px 20px 40px;
+}
+
+.testimonials-inner {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.testimonials-slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.testimonials-slider-window {
+    overflow: hidden;
+    flex: 1;
+}
+
+.testimonials-slider-track {
+    display: flex;
+    transition: transform 0.35s ease;
+}
+
+.testimonial-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 32px 36px;
+    background: #f7f4ef;
+    border-radius: 20px;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2d2d2d;
+    margin-bottom: 18px;
+}
+
+.testimonial-author {
+    font-size: 15px;
+    color: #7a7a7a;
+}
+
+.testimonials-arrow {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #e7dfd3;
+    color: #2d2d2d;
+    font-size: 24px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.testimonials-arrow:hover {
+    background: #d8cfbf;
+    transform: scale(1.04);
+}
+
+.testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.testimonials-dot {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    background: #cfc6b8;
+    cursor: pointer;
+    padding: 0;
+}
+
+.testimonials-dot-active {
+    background: #7d6d57;
+}
+
+@media (max-width: 768px) {
+    .testimonials-slider {
+        gap: 12px;
+    }
+
+    .testimonial-card {
+        padding: 24px 20px;
+    }
+
+    .testimonial-text {
+        font-size: 16px;
+    }
+
+    .testimonials-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .testimonials-slider {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        align-items: center;
+    }
+}
